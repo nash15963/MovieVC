@@ -1,0 +1,1279 @@
+// cd /Users/nash1/Desktop/develop/movieRec/movieRec/src/CssFile
+// stylus -w App.styl -o App.css
+
+// import normalize.css
+
+systemColor = rgba(255, 0, 132, 0.835) ;
+textColor = rgba(255, 255, 255, 0.956) ;
+backgroundColor = black 
+inputColor = rgba(239, 134, 205, 0.869) ;
+nodataColor = #918f8f ;
+centerWidth = 1000px
+
+#root{
+    font-family: 'Noto Sans TC', sans-serif
+    background-color: backgroundColor
+    text-align:center
+    width: 100%
+    background-size: cover
+    display: grid
+    grid-template-columns: 1fr 8fr 1fr
+    grid-template-rows: 80px 2fr 5fr 150px 
+
+    @media (max-width:680px) {
+        grid-template-columns: 0.5fr 8fr 0.5fr
+        grid-template-rows: 80px 2fr 8fr 150px 
+    }
+    @media (max-width:480px) {
+        grid-template-columns: 0.5fr 8fr 0.5fr
+        grid-template-rows: 100px 2fr 5fr 120px 
+    }
+}
+
+// Header
+.headBar {
+    color: textColor
+    grid-column: 1/4
+    grid-row: 1/2
+    display: grid
+    grid-template-columns: 2fr 8fr 2fr
+    grid-template-rows: 100%
+    align-items: center
+    position: sticky
+    top: 0
+    z-index: 30
+    background-color: backgroundColor
+    h1{
+        color: inputColor
+        text-shadow: 3px 3px 5px systemColor
+        cursor: pointer
+        font-family: "Gill Sans", sans-serif
+        grid-column: 1/2
+        grid-row: 1/2
+        margin: 0px
+        font-size: 2.5em
+        text-align: end
+        margin-left: 10px
+        @media (max-width :1024px) {
+            font-size: 2em
+            text-align: center
+        }
+        @media (max-width:800px) {
+            font-size: 1.3em
+            text-align: center
+        }
+        @media (max-width:680px) {
+            font-size: 1em
+            text-align: center
+        }
+        @media (max-width:480px) {
+            font-size: 1em
+            text-align: center
+        }
+    }
+
+    .header-member{
+        grid-column: 3/4
+        grid-row: 1/2
+        
+        .icon{
+            width: 40px
+            height: 40px
+            cursor: pointer
+            margin: 0px auto
+            @media (max-width :1024px) {
+                width: 40px
+                height: 40px
+            }
+            @media (max-width:800px) {
+                width: 30px
+                height: 30px    
+                float: none
+                margin: 0px auto
+            }
+            @media (max-width:680px) {
+                width: 30px
+                height: 30px
+                float: none
+                margin: 0px auto
+            }
+            @media (max-width:480px) {
+                width: 30px
+                height: 30px
+                float: none
+                margin: 0px auto
+            }
+        }
+    }
+    .header-input{
+        grid-column: 2/3
+        grid-row: 1/2
+        input{
+            border: solid 1px backgroundColor
+            padding-left: 20px
+            margin: 0px auto
+            width: 70%  
+
+            @media (max-width:800px) {
+                width: 60%  
+            }   
+            @media (max-width:680px) {
+                width: 50%  
+            }   
+        }
+        button{
+            background-color: inputColor
+            cursor:pointer
+            border: solid 1px backgroundColor
+            color: textColor
+            display: grid inline-block 
+            place-items: center 
+        }
+        input , button{
+            display: inline-block
+            padding: 10px 15px
+            border-radius: 0
+            -webkit-appearance: none
+        }
+    }
+}
+// random //
+
+.random{
+    grid-column: 2/3
+    grid-row: 2/3
+    cursor: default
+    border: none
+    margin: 10px auto 
+    background: linear-gradient(to bottom, #666,backgroundColor)
+    width: 80%
+    height: 90%
+    position: relative
+
+    @media (max-width:800px) {
+        width: 100%
+    }   
+
+        .random-frame{
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0px
+            
+            img{
+                width: 100%
+                height: 100%
+                opacity :0.5
+                object-fit: cover
+                object-position: center top
+                filter: brightness(1.1)
+            }
+            &:hover{
+                filter: brightness(0.8)
+            }
+            &:hover .random-icon{
+                display: block
+            }
+        }      
+}
+
+
+
+.random-mes{
+    color: textColor
+    position: absolute
+    bottom: 10%
+    left: 6%
+    text-align: left
+
+    h2{
+        font-size: 3em
+        margin: 10px 0px 0px 0px
+   @media (max-width :1024px) {
+        font-size: 2.8em
+        margin: 8px 0px 0px 0px
+    }
+    @media (max-width:800px) {
+        font-size: 2em
+        margin: 6px 0px 0px 0px
+    }   
+    @media (max-width:680px) {
+        font-size: 1.5em
+        margin: 5px 0px 0px 0px
+    }
+    @media (max-width:480px) {
+        font-size: 1em
+        margin: 5px 0px 0px 0px
+
+    }  
+    }
+    p{
+        font-size: 2em
+        color: systemColor
+        margin: 10px 0px 0px 0px
+    @media (max-width :1024px) {
+        font-size: 1.5em
+        margin: 8px 0px 0px 0px
+    }
+    @media (max-width:800px) {
+        font-size: 1.3em
+        margin: 6px 0px 0px 0px
+    }   
+    @media (max-width:680px) {
+        font-size: 1em
+        margin: 4px 0px 0px 0px
+    }
+    @media (max-width:480px) {
+        font-size: 1em
+        margin: 3px 0px 0px 0px
+
+    }
+
+    }
+    p:nth-child(3){
+        margin-bottom: 8px
+    }
+    span{
+        font-size: 2em
+        margin-top: 80px
+        cursor: pointer
+        &:hover{
+            color: systemColor
+        }
+        @media (max-width :1024px) {
+            font-size: 1.5em
+            margin: 8px 0px 0px 0px
+        }
+        @media (max-width:800px) {
+            font-size: 1.5em
+            margin: 8px 0px 0px 0px
+        }   
+        @media (max-width:680px) {
+            font-size: 1.4em
+            margin: 8px 0px 0px 0px
+        }
+        @media (max-width:480px) {
+            font-size: 1em
+            margin: 6px 0px 0px 0px
+        }
+    }
+    .random-recommend{
+        color: textColor
+    }
+}   
+
+.random-icon{
+    position: absolute
+    bottom : 40%
+    right: 2%
+    width: 70px
+    height: 70px
+    cursor: pointer
+    display: none
+    filter: brightness(1.3)
+    .icon{
+        width : 40px
+        height: 40px
+        color: inputColor
+    }
+}
+// ------  //
+
+.brief-grid{
+    grid-column: 2/3
+    grid-row: 3/4
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    
+}
+.controll-bar{
+    position: relative
+    z-index: 20
+    position: sticky
+    width: 100%
+    left: 1%
+}
+.distance-controller{
+    background: black
+    width: 70px
+    height: 500px
+    opacity 0.7
+    position: absolute
+    right: 0%
+    top: 0px
+    z-index: 15
+    @media (max-width :1024px) {
+        display: none
+        }
+
+}
+.distance-arrow{
+        color: inputColor
+        width: 50px
+        height: 50px
+        cursor:pointer
+        position: absolute
+        right: 10%
+        top: 40%
+        @media (max-width :1024px) {
+            width: 40px
+            height: 40px
+            top: 40%
+        }
+        @media (max-width:800px) {
+            width: 30px
+            height: 30px
+            top: 30%
+        }   
+        @media (max-width:680px) {
+            width: 25px
+            height: 25px
+            top: 20%
+        }
+        @media (max-width:480px) {
+            width: 20px
+            height: 20px
+            top: 20%
+        }
+}
+
+.home-brief{
+    width: 100%
+    overflow: scroll
+    position: relative
+    color: rgb(188, 180, 180)
+    overflow-y: hidden 
+    margin-bottom: 20px
+}
+
+.home-title{
+    color: textColor
+    cursor: pointer
+    margin: 10px 0px 20px 10px
+    text-align: left
+    font-size: 2em
+    z-index: 20
+    @media (max-width :1024px) {
+        margin: 10px 0px 12px 10px
+        font-size: 1.8em
+        }
+    @media (max-width:800px) {
+        margin: 10px 0px 8px 10px
+        font-size: 1.2em
+    }   
+    @media (max-width:680px) {
+        margin: 8px 0px 6px 10px
+        font-size: 1em
+    }
+    @media (max-width:480px) {
+        margin: 8px 0px 4px 10px
+        font-size: 0.6em
+    }   
+    &:hover{
+        color: systemColor
+    }
+}
+.brief-outerbox{
+    display: flex
+    height: 100%
+    scroll-behavior: smooth
+    margin: 0px auto
+    transition: 500ms transform
+    overflow-y: scroll
+    -ms-overflow-style: none /* for Internet Explorer, Edge */
+    scrollbar-width: none /* for Firefox */
+    &::-webkit-scrollbar {
+        display: none
+    }
+}
+.brief{
+    grid-column: 2/3
+    grid-row: 2/4
+}
+.brief-element{
+    margin: 5px
+    height: 78%
+    min-width: 18%
+    background-color: backgroundColor
+    position: relative
+    transition: transform 500ms
+    cursor: pointer
+    z-index: 1
+    overflow: visible
+    @media (max-width :1024px) {
+        min-width: 40%
+        }
+    @media (max-width:800px) {
+        min-width: 30%
+    }   
+    @media (max-width:680px) {
+    }
+    @media (max-width:480px) {
+    }
+        &:hover{
+        
+        z-index: 10
+    }
+    .brief-img{
+        // border: 2px solid red
+        width: 100%
+        height: 100%
+        background: rgba(102, 102, 102, 0.188)
+        background-image: linear-gradient(to bottom, #666,backgroundColor)
+        img{
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center top
+            
+        }
+    }
+    .brief-hide{
+        width: 100%
+        display: none
+        background-color: rgb(27, 25, 25)
+        position: absolute
+        bottom: 0px
+        text-align: left
+        word-break: keep-all
+        overflow-wrap: break-word
+        @media (max-width :1024px) {
+            height: 80%
+        }
+        p{
+            font-size: 6px
+            margin: 5px 
+            color: textColor     
+        }
+        p:nth-child(1){
+            font-size: 13px
+            font: bold
+        }
+        p:nth-child(2){
+            font-size: 8px
+            color: systemColor            
+        }
+        p:nth-last-child(1){
+            margin-bottom: 10px
+        }
+    }
+    &:hover .brief-hide {
+        display: block
+    @media (max-width :1024px) {
+        display: none
+        } 
+    }
+
+}
+
+
+.brief-outerbox:hover .brief-element {
+    transform: translateX(-15%)
+}
+.brief-element:hover ~ .brief-element {
+  transform: translateX(15%);
+}
+
+.brief-outerbox .brief-element:hover{
+    transform: scale(1.1)
+}
+
+//search page
+.search-page{
+    grid-column: 2/3
+    grid-row: 2/4
+    min-height: 100vh
+    overflow: hidden
+    .brief{
+        width :100%
+    }
+    .brief-more{
+        margin: 0px auto
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+    }
+    .more-element{
+            width: 260px
+            margin: 10px auto
+            border: backgroundColor 10px solid
+            color: textColor
+            position: relative
+            cursor: pointer
+            &:hover .brief-img{
+            opacity: 0.8
+            }
+            &:hover .brief-hide {
+            display: block
+            }
+        .brief-img{
+                width: 100%
+                height: 100%
+                background: rgba(102, 102, 102, 0.188)
+                background-image: linear-gradient(to bottom, #666,backgroundColor)
+                img{
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    object-position: center top
+                }
+        }
+        .brief-hide{
+                min-height: 25%
+                width: 100%
+                display: none
+                background-color: rgb(27, 25, 25)
+                position: absolute
+                bottom: 0px
+                text-align: left
+                word-break: keep-all
+                overflow-wrap: break-word
+                p{
+                    font-size: 13px  
+                    margin: 0px 5px 5px 5px
+                    color: textColor  
+                }
+                p:nth-child(1){
+                    font-size: 20px 
+                    margin: 10px 5px 5px 5px
+                }
+                p:nth-child(2){
+                    font-size: 15px
+                    color: systemColor
+                }
+                span{
+                    color: textColor
+                    float: right
+                    margin-right: 12px
+                }
+                
+        }
+    }
+}
+
+
+
+
+// more-movie page css
+.brief{
+
+}
+.hasnoMovie{
+    color: textColor
+    text-align: center
+    margin: 150px auto
+    min-height: 250px
+    height: calc(100% - 50px)
+}
+.load-content{
+    width: 100%
+    margin: 50px auto 40px auto
+    display: flex
+    align-items: center
+}
+
+.more-movie{
+    grid-column: 2/3
+    grid-row: 2/4
+    min-height: 100vh
+    display: flex
+    flex-wrap: wrap
+    position: relative
+    justify-content: flex-start
+    .moremovie-title{
+        width: 100%
+        line-height: 2em
+        z-index: 20
+        background-color: backgroundColor
+        margin: 10px 0px
+        color: textColor
+        font-size: 3em
+        cursor: pointer
+        text-align: start
+        &:hover{
+            color: systemColor
+        }
+    }
+    .brief{
+        width: 100%
+        .brief-more{
+            margin: 0px auto
+            display: flex
+            flex-wrap: wrap
+            justify-content: flex-start
+        }
+        overflow: hidden
+        .more-element{
+            width: 260px
+            margin: 10px auto
+            border: backgroundColor 10px solid
+            color: textColor
+            position: relative
+            cursor: pointer
+        &:hover .brief-img{
+            opacity: 0.8
+        }
+        &:hover .brief-hide {
+            display: block
+        }
+            .brief-img{
+                width: 100%
+                height: 100%
+                background: rgba(102, 102, 102, 0.188)
+                background-image: linear-gradient(to bottom, #666,backgroundColor)
+                img{
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    object-position: center top
+                }
+            }
+            .brief-hide{
+                min-height: 25%
+                width: 100%
+                display: none
+                background-color: rgb(27, 25, 25)
+                position: absolute
+                bottom: 0px
+                text-align: left
+                word-break: keep-all
+                overflow-wrap: break-word
+                p{
+                    font-size: 13px  
+                    margin: 0px 5px 5px 5px
+                    color: textColor  
+                }
+                p:nth-child(1){
+                    font-size: 20px 
+                    margin: 10px 5px 5px 5px
+                }
+                p:nth-child(2){
+                    font-size: 15px
+                    color: systemColor
+                }
+                span{
+                    color: textColor
+                    float: right
+                    margin-right: 12px
+                }
+                
+            }
+        }
+    }
+}
+
+
+
+
+// member sign
+
+.member{
+    color : textColor
+    grid-column: 2/3 
+    grid-row: 2/4
+    min-height: 100vh
+}
+.member-note{
+    color: systemColor
+    margin: 10px auto
+}
+.member-sign{
+    margin: 50px auto
+    padding: 20px 50px
+    max-width: 700px
+    width : 100% 
+    border: 5px solid transparent 
+    border-color: textColor
+    box-sizing: border-box
+    legend{
+        font-size: 40px
+        margin: 0px auto
+        color: textColor
+    }
+    input{
+        width: 100%
+        border-radius: 5px
+        outline: none
+        border: none 
+        line-height: 200%
+        margin: 5px auto
+        padding-left: 20px
+    }
+    button{
+        width: 100%
+        border-radius: 5px
+        border: none 
+        background-color: inputColor
+        line-height: 150%
+        margin: 30px auto
+        cursor:pointer
+    }
+    span{
+        color: inputColor
+        cursor: pointer
+    }
+}
+// videoPage //
+.video-parent{
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    grid-row: 2/4
+    grid-column: 2/3
+    background-color: backgroundColor
+    width: 100%
+    min-height: 100vh
+}
+.size-controller{
+    width: 80%
+    @media (max-width :1024px) {
+        width: 90%
+    }
+    @media (max-width:800px) {
+        width: 100%
+    }   
+}
+.video-frame{
+    position: relative
+    width: 100%
+    height: 0
+    padding-bottom: 56.25%
+    iframe{
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+    }
+    
+    .loading {
+        position: absolute
+        background: #928888
+        width: 100%
+        height: 100%
+        overflow: hidden
+    }
+    .loading:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        transform: translateX(-100px)
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)
+        animation: loading 0.6s infinite
+        // background: rgba(13, 12, 12, 0.2)
+    }
+    h5{
+        color: nodataColor
+        text-align: center
+        line-height: 150px
+        font-size: 20px
+    }
+}
+@keyframes loading {
+    100% {
+        transform: translateX(100%);
+    }
+}
+.video-detail{
+    display:block
+    width: 80%
+    color: textColor
+    text-align: left
+    padding: 0px 10px 10px 30px
+    margin-left: 0px
+    margin-top: 20px
+    width: 90%
+    background-color:  rgb(36, 34, 34)
+
+    @media (max-width :1024px) {
+        
+    }
+    @media (max-width:800px) {
+        font-size: 1em
+    }   
+    @media (max-width:680px) {
+    }
+    
+    .skip-line{
+        display: block
+        margin-right: 30px
+        text-align: start
+        cursor: pointer
+        color: #666
+    }
+}
+
+// button add in favorite list animation
+.heart-element{
+    height: 50px
+    &:hover .heart-click{
+        display: block
+        left: 80px
+        visibility: visible
+    }
+}
+.heart{
+    display: inline-block
+    height: 20px
+    margin: 20px 10px
+    position: relative
+    top: 0
+    transform: rotate(-45deg)
+    width: 20px
+    cursor: pointer
+    
+}
+
+.heart .heart-before, // 模擬 before after
+.heart .heart-after {
+    border-radius: 50%
+    height: 20px
+    position: absolute
+    width: 20px
+    overflow: hidden
+}
+
+.heart-before {
+    top: -10px
+    left: 0
+}
+
+.heart-after {
+    left: 10px
+    top: 0
+}
+.heart-click{
+    color: nodataColor
+    position: relative
+    top: -60px
+    left: 25px
+    transition: left 0.6s
+    width: 120px
+    visibility: hidden
+}
+
+// --************-- //
+.video-relative{
+    width: 45%
+    @media (max-width :1024px) {
+        width: 90%
+    }
+    @media (max-width:800px) {
+    }   
+    @media (max-width:680px) {
+    }
+    @media (max-width:480px) {
+    }
+    h3{
+        text-align: center
+        color: textColor
+        margin: 50px auto 30px auto
+        width: 100%
+    }
+    h5{
+        color: nodataColor
+        text-align: center
+        font-size: 30px
+    }
+    .brief-more{
+        width: 90%
+        margin: 0px auto
+        @media (max-width :1024px) {
+            width: 90%
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+        }
+        @media (max-width:800px) {
+        }   
+        @media (max-width:680px) {
+        }
+        @media (max-width:480px) {
+        }
+        .more-element{
+            width: 60%
+            margin: 20px auto
+            color: textColor
+            position: relative
+            cursor: pointer
+                @media (max-width :1024px) {
+                    width: 45%
+                }
+                @media (max-width:800px) {
+                }   
+                @media (max-width:680px) {
+                }
+                @media (max-width:480px) {
+                }
+        &:hover .brief-img{
+            opacity: 0.8
+        }
+        &:hover .brief-hide {
+            display: block
+        }
+            .brief-img{
+                width: 100%
+                height: 100%
+                background: rgba(102, 102, 102, 0.188)
+                background-image: linear-gradient(to bottom, #666,backgroundColor)
+                img{
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    object-position: center top
+                }
+            }
+            .brief-hide{
+                min-height: 20%
+                width: 100%
+                display: none
+                background-color: rgb(27, 25, 25)
+                position: absolute
+                bottom: 0px
+                text-align: left
+                word-break: keep-all
+                overflow-wrap: break-word
+                p{
+                    font-size: 13px  
+                    margin: 0px 5px 5px 5px
+                    color: textColor  
+                }
+                p:nth-child(1){
+                    font-size: 20px 
+                    margin: 10px 5px 5px 5px
+                }
+                p:nth-child(2){
+                    font-size: 15px
+                    color: systemColor
+                }
+                span{
+                    color: textColor
+                    float: right
+                    margin-right: 12px
+                }
+                
+            } 
+        }
+    }
+}
+
+
+
+// --** ------------ message board -----------------**--//
+.board{
+    width: 45%
+    @media (max-width :1024px) {
+        width: 80%
+    }
+    @media (max-width:800px) {
+    }   
+    @media (max-width:680px) {
+    }
+    @media (max-width:480px) {
+    }
+
+    h5{
+        color: rgb(145, 143, 143)
+        font-size: 20px
+        text-align: center
+    }
+
+}
+.board-type{
+    height: 150px
+    min-height: 100px
+    margin: 30px
+    input{
+        margin: 10px auto
+        float: right
+        width: 100%
+        line-height: 200%
+        box-shadow: none
+        font-size: 20px
+        color: textColor
+        border-top-width: 0px
+        border-right-width: 0px;
+        border-left-width: 0px;
+        border-bottom-color: #666
+        outline: none
+        background-color: rgba(0, 0, 0, 0)
+
+        &:focus {
+            
+            border-bottom-color: textColor
+
+        }
+    }
+    button{
+        float: right 
+        width: 80px  
+        border-radius: 15px
+        background-color: rgb(199, 197, 197)
+        line-height: 2.5
+        margin: 15px auto
+        cursor:pointer
+        box-shadow: none
+        border: none
+
+    }
+}
+.headPhoto{
+    font-size: 30px
+    margin: 10px
+    background-color: rgba(230, 59, 176, 0.869)
+    width :50px
+    height: 50px
+    border-radius: 50%
+    text-align: center
+    line-height: 1.7
+    display: block
+    cursor: default
+}
+.board-view{
+    color: textColor
+    margin: 10px
+}
+
+.board-message{
+    margin: 0px
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    p{
+        margin: 5px auto
+        width: 100%
+        @media (max-width :1024px) {
+        }
+        @media (max-width:800px) {
+        }   
+        @media (max-width:680px) {
+        }
+        @media (max-width:480px) {
+        }
+    }
+    p:nth-child(1){
+        display: flex
+        flex-wrap: wrap
+    }
+}
+.board-date{
+    float: right
+    color: rgb(136, 130, 130)
+    font-size: 10px
+    width: 100%
+    text-align: right
+    @media (max-width :1024px) {
+        }
+    @media (max-width:800px) {
+    }   
+    @media (max-width:680px) {
+        font-size: 0.8em
+    }
+    @media (max-width:480px) {
+    }
+}
+.board-author{
+    font-size: 20px
+    display: block
+    line-height: 80px
+    margin-left: 5px
+}
+.allmessage{
+    padding-left: 30px
+    text-align: left
+}
+// --** ------------ message board -----------------**--end//
+
+// Profile
+.profile{
+    min-height: 100vh
+    grid-column: 2/3
+    grid-row: 2/4
+}
+// --************-- //
+
+// user-list //
+
+.user-list{
+    margin: 10px auto
+    position: relative
+    height: auto
+    width: 90%
+    h3{
+        background-color: textColor
+        height: 4em
+        text-align: center
+        line-height: 80px
+        box-shadow: 0 8px 8px -4px systemColor
+        margin-bottom: 35px
+        padding: 5px 20px
+        cursor: pointer
+        span{
+            float: right
+        }
+    }
+    h5{
+        color: textColor
+        text-align: center
+        margin-right: 20px
+        font-size: 20px
+    }
+    .brief-more{
+        justify-content: flex-start
+        flex-wrap: wrap;
+        color: textColor
+        position: relative
+        padding: 10px auto
+
+        .more-element{
+            width: 230px
+            margin: 10px 10px
+            position: relative
+            cursor: pointer
+        &:hover .brief-img{
+            opacity: 0.8
+        }
+        &:hover .brief-hide {
+            display: block
+        }
+            .brief-img{
+                width: 100%
+                height: 100%
+                background: rgba(102, 102, 102, 0.188)
+                background-image: linear-gradient(to bottom, #666,backgroundColor)
+                img{
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    object-position: center top
+                }
+            }
+            
+            .delete{
+                width: 40px
+                height: 40px
+                background-color: textColor
+                color: black
+                border-radius: 50%
+                text-align: center
+                font-weight:bold
+                line-height: 35px
+                font-size: 30px
+                cursor: pointer
+                position: absolute
+                display: inline
+                top: -8%
+                right: -5%
+                z-index: 20
+                &:hover{
+                    animation: rotation 3s infinite
+                }
+                
+            }
+        }
+    }
+    
+}
+@keyframes rotation {
+  50% {transform: rotate(360deg);}
+}
+// --************-- //
+// sign out
+.signout{
+    width: 90%
+    margin: 10px auto
+    position: relative
+    height: auto
+    min-height: 90px
+    h3{
+        background-color: textColor
+        height: 4em
+        text-align: center
+        line-height: 80px
+        box-shadow: 0 8px 8px -4px systemColor
+        margin-bottom: 35px
+        padding: 5px 20px
+        cursor: pointer
+        span{
+            float: right
+        }
+    }
+    p{
+        color: textColor
+        text-align: center
+        margin-right: 20px
+        font-size: 20px
+        cursor: pointer
+        &:hover{
+            color: systemColor
+        }
+    }
+}
+
+
+
+
+
+// --************-- //
+// footer
+.Footer{
+    color: textColor
+    text-align: center
+    border-top: double #666
+    margin: 20px auto
+    width: 99%
+    height: 60px 
+    grid-column: 1/4
+    grid-row: 4/5
+    word-break: keep-all
+    overflow-wrap: break-word
+
+    p{
+        color: #666
+        text-align: center
+    }
+}
+
+
+// --************-- //
+
+// css loader
+.loader {
+    width: 48px
+    height: 48px
+    border-radius: 50%
+    display: inline-block
+    border-top: 3px solid systemColor
+    border-right: 3px solid transparent
+    box-sizing: border-box
+    animation: rotation 1s linear infinite
+    margin: 0px auto
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+} 
+// --************-- //
+
+// restart //
+
+
+    // @media (max-width :1024px) {
+    //     }
+    // @media (max-width:800px) {
+    // }   
+    // @media (max-width:680px) {
+    // }
+    // @media (max-width:480px) {
+    // }
