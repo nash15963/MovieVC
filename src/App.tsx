@@ -20,11 +20,11 @@ import ProfilePage from './Page/ProfilePage';
 
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState<string>('');
   const [count, setCount] = useState<number>(1)
   const [movieData, setMovieData] = useState<movieBrief[]>([])
   const [accessRight, useAccessRight] = useState<boolean>(()=>{
-    let certificate = localStorage.getItem('username'); 
+    let certificate:string|null = localStorage.getItem('username'); 
     return certificate ?  true : false
   }) ; // login certificate
   return (
