@@ -1,3 +1,4 @@
+import { createContext, useContext  ,useState} from "react"
 import './CssFile/App.css'
 import HomePage from './Page/HomePage'
 import ErrorPage from './Page/ErrorPage';
@@ -13,8 +14,6 @@ import MemberPage from './Page/MemberPage';
 
 import { BrowserRouter as Router ,Routes ,Route} from "react-router-dom";
 import SearchPage from './Page/SearchPage';
-import { useState } from 'react';
-
 import { movieBrief } from './Interfaces/MovieInterfaces' ;  //interface
 import ProfilePage from './Page/ProfilePage';
 
