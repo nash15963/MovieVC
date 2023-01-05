@@ -1,4 +1,4 @@
-import { createContext, useContext  ,useState} from "react"
+import { useState } from "react"
 import './CssFile/App.css'
 import HomePage from './Page/HomePage'
 import ErrorPage from './Page/ErrorPage';
@@ -17,6 +17,9 @@ import SearchPage from './Page/SearchPage';
 import { movieBrief } from './Interfaces/MovieInterfaces' ;  //interface
 import ProfilePage from './Page/ProfilePage';
 
+import { AppCtx } from "./ContextHooks";
+
+
 
 function App() {
   const [message, setMessage] = useState<string>('');
@@ -26,11 +29,14 @@ function App() {
     let certificate:string|null = localStorage.getItem('username'); 
     return certificate ?  true : false
   }) ; // login certificate
+  
   return (
     <>
+    <AppCtx.Provider value={{
+      message ,setMessage ,count , setCount ,movieData ,setMovieData ,accessRight ,useAccessRight}}>
       <Router>
-      <Header  message={message} setMessage={setMessage} setCount={setCount} setMovieData={setMovieData}
-       accessRight={accessRight} useAccessRight={useAccessRight} />
+      
+      <Header/>
 
         <Routes>
 
@@ -39,18 +45,18 @@ function App() {
           
           
           <Route path='/MoreMovie/:MoreMovie' element={<MoreMoviePage/>}/>
-          <Route path='/search/:query' element={<SearchPage 
-          count={count} setCount={setCount} setMovieData={setMovieData} movieData={movieData}/>}/>
+          <Route path='/search/:query' element={<SearchPage/>}/>
 
-          <Route path='/profile' element={<ProfilePage useAccessRight={useAccessRight}/>}/>
-          <Route path='/member' element={<MemberPage accessRight={accessRight} useAccessRight={useAccessRight}/>}/>
+          <Route path='/profile' element={<ProfilePage/>}/>
+          <Route path='/member' element={<MemberPage/>}/>
           <Route path='*' element={<ErrorPage/>}/>
 
         </Routes>
 
       <Footer/>
-
+      
       </Router>
+      </AppCtx.Provider>
     </>
   )
 }

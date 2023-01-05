@@ -1,16 +1,13 @@
-import React, { useEffect, useState ,useRef ,useCallback} from 'react'
+import React, { useEffect, useState ,useRef ,useCallback ,useContext} from 'react'
 import { useNavigate,useParams } from "react-router-dom";
 import InfinitieScrollComponent from '../Components/InfinitieScrollComponent';
 import { movieBrief } from '../Interfaces/MovieInterfaces' ;  //interface
+import { AppCtx } from '../ContextHooks';
 
-interface Props{
-  movieData : movieBrief[] ;
-  count : number ;
-  setCount : React.Dispatch<React.SetStateAction<number>> ;
-  setMovieData : React.Dispatch<React.SetStateAction<movieBrief[]>> ;
-}
 
-const SearchPage = ({movieData ,count ,setCount ,setMovieData}:Props) => {
+const SearchPage = () => {
+  const { count , setCount , setMovieData , movieData } = useContext(AppCtx) 
+
   let { query } = useParams<{query:string}>() ;
   const [loading, setLoading] = useState<boolean>(true)
   const [hasMore, setHasMore] = useState<boolean>(false);

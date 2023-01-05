@@ -1,26 +1,18 @@
-import React, { ChangeEvent , useEffect, useState } from 'react'
+import React, { ChangeEvent , useEffect, useState ,useContext} from 'react'
 import { useNavigate } from "react-router-dom";
 import { movieBrief } from '../Interfaces/MovieInterfaces' ;  //interface
 import { BsSearch } from 'react-icons/bs';
 import { FaUserPlus } from 'react-icons/fa';
 import { BiUserCheck } from 'react-icons/bi';
 
+import { AppCtx } from '../ContextHooks';
 
 
 
-interface Props{
-  message :string ;
-  setMessage : React.Dispatch<React.SetStateAction<string>> ;
-  setMovieData: React.Dispatch<React.SetStateAction<movieBrief[]>> ;
-  setCount :React.Dispatch<React.SetStateAction<number>> ;
-  accessRight : boolean ;
-  useAccessRight :React.Dispatch<React.SetStateAction<boolean>> ;
-}
 
-const Header = ({setMessage ,message ,setMovieData ,setCount,accessRight,useAccessRight }: Props) => { 
-  
+const Header = () => { 
   const navigate = useNavigate();
-  
+  const { message ,setMessage ,count , setCount ,movieData ,setMovieData ,accessRight ,useAccessRight } = useContext(AppCtx) 
   
   useEffect(()=>{
     let certificate = localStorage.getItem('username'); 

@@ -1,14 +1,15 @@
-import { useState,useCallback } from "react";
+import { useState,useCallback ,useRef, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import {  movieElementProps } from '../Interfaces/MovieInterfaces' ;  //interface
-import { BiChevronRight } from 'react-icons/bi';
+import {  movieElementProps ,movieBrief } from '../Interfaces/MovieInterfaces' ;  //interface
+import { MdKeyboardArrowLeft } from 'react-icons/md';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 
 
 const BriefComponent = ({movieCategory ,useHookData}:movieElementProps) => {
   // 電影簡介的各個區塊
   // 接收陣列
-  const [count, setCount] = useState(5)
+  const [count, setCount] = useState(0)
   const navigate = useNavigate();
   const handleMoreMovie =(MoreMovie:string)=>{
     navigate(`/MoreMovie/${MoreMovie}`);
@@ -16,34 +17,39 @@ const BriefComponent = ({movieCategory ,useHookData}:movieElementProps) => {
   const handleEachMovie =(id:number|undefined):void=>{
     navigate(`/watchs/${id}`);
   }
-  const handleScrollEvent=()=>{
-    const exam = document.getElementById(`Nowplay0`) ;
-    if(exam){
-      const exStyle = exam.getBoundingClientRect() ;
-      console.log(exStyle);
-    }
-
-    count !==15 ? setCount(state => state+5) : setCount(0) ; //when comes the end turn it back
-    const element = document.getElementById(`${movieCategory}${count}`) ;
-    if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: 'smooth' ,block: "nearest", inline: "start"});
-    }
+  
+  const handleRightScrollEvent=()=>{
+    if(count === 15) setCount(0)
+    else setCount(count+5)
   }
 
+  const handleLeftScrollEvent=()=>{
+    if(count !== 0)setCount(prev =>prev-5)
+  }
 
+  useEffect(()=>{
+    const movePosition=()=>{
+      const element = document.getElementById(`${movieCategory}${count}`) ;
+      element?.scrollIntoView({ behavior: 'smooth' ,block: "nearest", inline: "start"});
+    }
+    movePosition()
+  },[count])
+
+ 
   return (
     <div className='brief home-brief'>
     <div className="controll-bar">
     <h2 onClick={()=>{handleMoreMovie(movieCategory)}} className='home-title'>{movieCategory}...</h2>  
-    <div className="distance-controller" onClick={handleScrollEvent}><BiChevronRight className="distance-arrow"/></div> 
     </div>
+    <div className="leftArrow-element" onClick={handleLeftScrollEvent}><MdKeyboardArrowLeft className="distance-arrow leftarrow-detail"/></div>
+
      
 
     <div className='brief-outerbox'> 
         {useHookData.map((ele ,index)=>{
-          // console.log(`${movieCategory}${index}`) // `Nowplay12`
-            return  <div className='brief-element' id={`${movieCategory}${index}`} key={`${movieCategory}${index}`} onClick={()=>{handleEachMovie(ele.id)}}>
+            return  <div className='brief-element'
+            id={`${movieCategory}${index}`} key={`${movieCategory}${index}`} 
+            onClick={()=>{handleEachMovie(ele.id)}}>
                         <div className='brief-img'>
                             <img src={ele.posterUrl} alt={ele.originalTitle} />
                         </div>
@@ -59,6 +65,7 @@ const BriefComponent = ({movieCategory ,useHookData}:movieElementProps) => {
         })}
 
     </div>
+    <div className="rightArrow-element" onClick={handleRightScrollEvent}><MdKeyboardArrowRight className="distance-arrow rightarrow-detail"/></div>
     </div>
   )
 }

@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { MdKeyboardArrowUp } from 'react-icons/md';
+import { AppCtx } from '../ContextHooks';
 
-const Signout = ({useAccessRight}:{useAccessRight:React.Dispatch<React.SetStateAction<boolean>>}) => {
+
+
+const Signout = () => {
+  const { useAccessRight } = useContext(AppCtx) 
+
     const navigate = useNavigate();
     
     const [up, setUp] = useState<boolean>(true)

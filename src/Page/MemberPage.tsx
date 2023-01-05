@@ -1,8 +1,13 @@
-import React, { useState } from 'react' ;
+import React, { useContext, useState } from 'react' ;
 import Login from '../Member/Login' ;
 import Singup from '../Member/Singup' ;
 
-const MemberPage = ({accessRight,useAccessRight}:{accessRight:boolean;useAccessRight:React.Dispatch<React.SetStateAction<boolean>>}) => {
+import { AppCtx } from '../ContextHooks';
+
+
+const MemberPage = () => {
+  const { accessRight,useAccessRight } = useContext(AppCtx) 
+
     const [usernameForSignup , setUsernameForSignup] = useState('')
     const [passwordForSignup , setPasswordForSignup] = useState('')
 
