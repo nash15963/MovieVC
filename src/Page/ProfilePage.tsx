@@ -1,17 +1,15 @@
-import React from 'react'
-import UserListComponent from '../Components/UserListComponent'
-import Signout from '../Member/Signout'
+/** @format */
+
+import UserListComponent from "../Components/UserListComponent";
+import Signout from "../Member/Signout";
 
 const ProfilePage = () => {
-
-
   return (
-    <div className='profile'>
-      <UserListComponent/>
-      <Signout/>
-
+    <div className="profile">
+      <UserListComponent />
+      <Signout />
     </div>
-  )
-}
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;

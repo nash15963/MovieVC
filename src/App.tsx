@@ -23,7 +23,7 @@ function App() {
   const [count, setCount] = useState<number>(1);
   const [movieData, setMovieData] = useState<movieBrief[]>([]);
   const [accessRight, useAccessRight] = useState<boolean>(() => {
-    let certificate: string | null = localStorage.getItem("username");
+    const certificate: string | null = localStorage.getItem("username");
     return certificate ? true : false;
   }); // login certificate
 
