@@ -304,6 +304,11 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+@media (max-width: 680px) {
+  .brief-grid {
+    grid-column: 1/4;
+  }
+}
 .controll-bar {
   z-index: 20;
   position: sticky;
