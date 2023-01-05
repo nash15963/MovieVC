@@ -42,15 +42,11 @@ function App() {
 
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/watchs/:movieId' element={<VideoPage/>}/>
-          
-          
           <Route path='/MoreMovie/:MoreMovie' element={<MoreMoviePage/>}/>
           <Route path='/search/:query' element={<SearchPage/>}/>
-
           <Route path='/profile' element={<ProfilePage/>}/>
           <Route path='/member' element={<MemberPage/>}/>
           <Route path='*' element={<ErrorPage/>}/>
-
         </Routes>
 
       <Footer/>
