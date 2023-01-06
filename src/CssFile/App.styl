@@ -1060,14 +1060,7 @@ nodataColor = #918f8f ;
     p{
         margin: 5px auto
         width: 100%
-        @media (max-width :1024px) {
-        }
-        @media (max-width:800px) {
-        }   
-        @media (max-width:680px) {
-        }
-        @media (max-width:480px) {
-        }
+        
     }
     p:nth-child(1){
         display: flex
@@ -1143,6 +1136,9 @@ nodataColor = #918f8f ;
         position: relative
         padding: 10px auto
 
+        @media (max-width:800px) {
+            justify-content: center
+        }   
         .more-element{
             width: 230px
             margin: 10px 10px

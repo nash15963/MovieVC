@@ -1090,6 +1090,11 @@
   position: relative;
   padding: 10px auto;
 }
+@media (max-width: 800px) {
+  .user-list .brief-more {
+    justify-content: center;
+  }
+}
 .user-list .brief-more .more-element {
   width: 230px;
   margin: 10px 10px;
