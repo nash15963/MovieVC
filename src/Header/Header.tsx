@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { ChangeEvent, useEffect, useContext } from "react";
+import { ChangeEvent, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { FaUserPlus } from "react-icons/fa";
@@ -12,16 +12,14 @@ const Header = () => {
   const {
     message,
     setMessage,
-    count,
     setCount,
-    movieData,
     setMovieData,
     accessRight,
     useAccessRight,
   } = useContext(AppCtx);
 
   useEffect(() => {
-    let certificate = localStorage.getItem("username");
+    const certificate = localStorage.getItem("username");
     certificate ? useAccessRight(true) : useAccessRight(false);
   }, [accessRight]);
 
@@ -36,29 +34,31 @@ const Header = () => {
       </h1>
 
       <div className="header-input">
-        <input
-          type="text"
-          placeholder="keywods ?"
-          value={message}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            setMessage(event.target.value);
-            // console.log(event.target.value)
-          }}
-        />
-        <button
-          onClick={() => {
-            if (message === "") {
-              alert("請輸入訊息 ！");
-            } else {
-              navigate(`/search/${message}`);
-              setMovieData([]);
-              setCount(0);
-              setMessage("");
-            }
-          }}
-        >
-          <BsSearch />
-        </button>
+        <form>
+          <input
+            type="text"
+            placeholder="keywods ?"
+            value={message}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              setMessage(event.target.value);
+              // console.log(event.target.value)
+            }}
+          />
+          <button
+            onClick={() => {
+              if (message === "") {
+                alert("請輸入訊息 ！");
+              } else {
+                navigate(`/search/${message}`);
+                setMovieData([]);
+                setCount(0);
+                setMessage("");
+              }
+            }}
+          >
+            <BsSearch />
+          </button>
+        </form>
       </div>
       {accessRight ? (
         <div

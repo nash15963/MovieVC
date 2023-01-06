@@ -1,6 +1,6 @@
-import React, { useState ,useEffect } from 'react'
+import { useState ,useEffect } from 'react'
 import { db } from '../assets/firebase.config' ;
-import { collection,doc,getDoc,setDoc ,updateDoc,arrayUnion ,deleteDoc} from "firebase/firestore";
+import { doc,getDoc,setDoc ,deleteDoc} from "firebase/firestore";
 import { movieDetail } from '../Interfaces/MovieInterfaces' ;
 
 

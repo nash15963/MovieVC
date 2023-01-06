@@ -1,12 +1,12 @@
-import React from 'react'
+/** @format */
 
 const Footer = () => {
   return (
-    <footer className='Footer'>
-      <p>@2022 CY  &emsp; nash1596315963@gmail.com</p>
+    <footer className="Footer">
+      <p>@2022 CY &emsp; nash1596315963@gmail.com</p>
       <p>Powered by TMDB</p>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
