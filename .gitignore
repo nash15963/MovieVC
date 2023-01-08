@@ -30,3 +30,4 @@ firebase.json
 firebase.config.tsx
 *assets
 Todo
+.env

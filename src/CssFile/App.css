@@ -1090,7 +1090,7 @@
   position: relative;
   padding: 10px auto;
 }
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .user-list .brief-more {
     justify-content: center;
   }
@@ -1184,6 +1184,12 @@
 .Footer p {
   color: #666;
   text-align: center;
+}
+.error {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  min-height: 100vh;
+  color: #fff;
 }
 .loader {
   width: 48px;

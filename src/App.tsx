@@ -26,6 +26,8 @@ function App() {
     const certificate: string | null = localStorage.getItem("username");
     return certificate ? true : false;
   }); // login certificate
+  
+
 
   return (
     <>

@@ -1,9 +1,13 @@
-import React from 'react'
+/** @format */
+
+import { useEffect } from "react";
 
 const ErrorPage = () => {
-  return (
-    <h1 style={{color:'white'}}>ErrorPage Page Not Found</h1>
-  )
-}
+  useEffect(() => {
+    document.title = "Error !";
+  }, []);
 
-export default ErrorPage
+  return <h1 className="error">Error Page Not Found</h1>;
+};
+
+export default ErrorPage;

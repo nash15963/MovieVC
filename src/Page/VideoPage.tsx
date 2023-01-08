@@ -1,16 +1,15 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { movieDetail } from "../Interfaces/MovieInterfaces";
 import MessageBoardComponent from "../Components/MessageBoardComponent";
 import RelativeMovieComponents from "../Components/RelativeMovieComponents";
 
-import YouTube, { YouTubeProps } from "react-youtube";
+import YouTube from "react-youtube";
 
 import WaitingListComponent from "../Components/WaitingListComponent";
-// 這頁右半部需要相似影片 done
 // 錯誤網址處理 904551 done
 
 type idType = {
@@ -19,12 +18,10 @@ type idType = {
 
 const Watch = () => {
   const { movieId } = useParams<idType>();
-
   const [videoKey, setVideoKey] = useState<string>("");
   const [videoData, setVideoData] = useState<movieDetail>({});
   const [noVideo, setNoVideo] = useState(false);
   const [videoLoad, setVideoLoad] = useState(true);
-
   const [showMore, setShowMore] = useState(true);
 
   const FetchMovieDetail = async () => {
@@ -44,7 +41,9 @@ const Watch = () => {
             popularityPoints: myJson.popularity,
             posterUrl: `https://image.tmdb.org/t/p/w500${myJson.poster_path}`,
           });
+          document.title = `MovieVC:${myJson.original_title}`;
         });
+      // videoData.originalTitle ? document.title = videoData.originalTitle : document.title= 'oops'
     } else {
       setVideoData({});
     }
@@ -82,11 +81,15 @@ const Watch = () => {
     const timer = setTimeout(() => {
       FetchMovieDetail();
       FetchMovieVideo();
-    }, 800);
+    }, 600);
     return () => {
       clearTimeout(timer);
     };
   }, [movieId]);
+
+  // useEffect(()=>{
+  //   document.title = title
+  // } ,[title])
 
   return (
     <div className="video-parent">

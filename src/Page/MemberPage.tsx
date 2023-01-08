@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react' ;
+import { useContext, useEffect, useState } from 'react' ;
 import Login from '../Member/Login' ;
 import Singup from '../Member/Singup' ;
 
@@ -6,7 +6,7 @@ import { AppCtx } from '../ContextHooks';
 
 
 const MemberPage = () => {
-  const { accessRight,useAccessRight } = useContext(AppCtx) 
+  const { useAccessRight } = useContext(AppCtx) 
 
     const [usernameForSignup , setUsernameForSignup] = useState('')
     const [passwordForSignup , setPasswordForSignup] = useState('')
@@ -16,7 +16,10 @@ const MemberPage = () => {
 
     const [memberMessage , setmMmberMessage] = useState('')
     const [flip , setFlip] = useState(false)
-
+    
+    useEffect(() => {
+      document.title = "MovieVC";
+    }, []);
   return (
     <div className='member'>
 

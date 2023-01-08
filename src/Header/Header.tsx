@@ -26,13 +26,7 @@ const Header = () => {
   return (
     <div className="headBar">
       <h1
-        onClick={() => {
-          navigate(`/`);
-        }}
-      >
-        MovieVC
-      </h1>
-
+        onClick={() => { navigate(`/`);}}>MovieVC</h1>
       <div className="header-input">
         <form>
           <input
@@ -45,7 +39,8 @@ const Header = () => {
             }}
           />
           <button
-            onClick={() => {
+            onClick={(event:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+              event.preventDefault()
               if (message === "") {
                 alert("請輸入訊息 ！");
               } else {

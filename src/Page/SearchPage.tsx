@@ -60,7 +60,12 @@ const SearchPage = () => {
       clearTimeout(timer);
     };
   }, [count]);
-
+  
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+    document.title= `MovieVC:${query}`
+  },[])
+  
   return (
     <div className="search-page">
       {!errorMake ? (

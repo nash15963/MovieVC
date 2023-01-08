@@ -75,6 +75,11 @@ const MoreMovie = () => {
     };
     // keyword ? fetchUrl(keyword) : console.log('wrong');
   }, [count]);
+  
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+    MoreMovie ? document.title= `MovieVC:${MoreMovie}` : document.title= "Oops"
+  } ,[])
 
   return (
     <div className="more-movie">
