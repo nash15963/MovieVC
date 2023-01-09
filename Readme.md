@@ -49,7 +49,7 @@ Recommend a random movie and use a page flipping animation to increase the amoun
 <!-- ![image](https://nash15963.github.io/MovieVC/img/Random_movie_recommendation_AdobeExpress.gif) -->
 
 <div align=center>
-<img src="https://nash15963.github.io/MovieVC/img/Random_movie_recommendation_AdobeExpress.gif" width="200" height="200" alt="Random movie recommendation"/>
+<img src="https://nash15963.github.io/MovieVC/img/Random_movie_recommendation_AdobeExpress.gif" width="80%" alt="Random movie recommendation"/>
 </div>
 
 
