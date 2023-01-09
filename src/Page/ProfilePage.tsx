@@ -6,6 +6,7 @@ import Signout from "../Member/Signout";
 
 const ProfilePage = () => {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = "MovieVC";
   }, []);
 

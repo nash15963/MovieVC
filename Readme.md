@@ -31,9 +31,12 @@ Recommend a random movie and use a page flipping animation to increase the amoun
 
 *Popular movie recommendations
 Horizontal scrolling component like Carousel.
+![image](url2)
+
 
 *Search for movies by keyword
 Infinite scroll with Intersection Observer API
+![image](url3)
 
 *Movie introduction and message board
 
