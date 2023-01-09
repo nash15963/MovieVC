@@ -26,23 +26,27 @@ Favorites list
 Function Description :
 *Random movie recommendation
 Recommend a random movie and use a page flipping animation to increase the amount of time users stay on the page
-![image](url)
+![image](https://nash15963.github.io/MovieVC/img/Random_movie_recommendation_AdobeExpress.gif)
 
 
 *Popular movie recommendations
 Horizontal scrolling component like Carousel.
-![image](url2)
+![image](https://nash15963.github.io/MovieVC/img/Popular_movie_recommendations_AdobeExpress.gif)
 
 
 *Search for movies by keyword
 Infinite scroll with Intersection Observer API
-![image](url3)
+![image](https://nash15963.github.io/MovieVC/img/Infinite_scroll_AdobeExpress.gif)
+
 
 *Movie introduction and message board
-![image](url4)
+![image](https://nash15963.github.io/MovieVC/img/messageboard_AdobeExpress.gif)
+
 
 *Favorites list
-![image](url5)
+![image](https://nash15963.github.io/MovieVC/img/Lists_AdobeExpress.gif)
+
+
 
 ```js
 npm run dev
