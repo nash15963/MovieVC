@@ -5,9 +5,11 @@ A movie introduction website where users can leave comments below the film or ad
 [Demo](https://chungyee-movieviewcontroller.web.app/ "link")
 
 
+
 test account : user
 
 test password : user
+
 
 
 ## Tools :
@@ -23,6 +25,7 @@ Firebase
 Git
 
 clean code : ESlint Prettier
+
 
 
 
@@ -47,6 +50,7 @@ clean code : ESlint Prettier
 Recommend a random movie and use a page flipping animation to increase the amount of time users stay on the page .
 
 
+
 <div align=center>
 <img src="https://nash15963.github.io/MovieVC/img/Random_movie_recommendation_AdobeExpress.gif" width="90%" alt="Random movie recommendation"/>
 </div>
@@ -57,7 +61,7 @@ Recommend a random movie and use a page flipping animation to increase the amoun
 
 Horizontal scrolling component like Carousel.
 
-<!-- ![image](https://nash15963.github.io/MovieVC/img/Popular_movie_recommendations_AdobeExpress.gif) -->
+
 <div align=center>
 <img src="https://nash15963.github.io/MovieVC/img/Popular_movie_recommendations_AdobeExpress.gif" width="90%"/>
 </div>
@@ -68,7 +72,7 @@ Horizontal scrolling component like Carousel.
 
 Infinite scroll with Intersection Observer API .
 
-<!-- ![image](https://nash15963.github.io/MovieVC/img/Infinite_scroll_AdobeExpress.gif) -->
+
 <div align=center>
 <img src="https://nash15963.github.io/MovieVC/img/Infinite_scroll_AdobeExpress.gif" width="90%"/>
 </div>
@@ -77,7 +81,7 @@ Infinite scroll with Intersection Observer API .
 
 ### Movie introduction and message board
 
-<!-- ![image](https://nash15963.github.io/MovieVC/img/messageboard_AdobeExpress.gif) -->
+
 <div align=center>
 <img src="https://nash15963.github.io/MovieVC/img/messageboard_AdobeExpress.gif" width="90%"/>
 </div>
@@ -86,7 +90,7 @@ Infinite scroll with Intersection Observer API .
 
 ### Favorites list
 
-<!-- ![image](https://nash15963.github.io/MovieVC/img/Lists_AdobeExpress.gif) -->
+
 <div align=center>
 <img src="https://nash15963.github.io/MovieVC/img/Lists_AdobeExpress.gif" width="90%"/>
 </div>
