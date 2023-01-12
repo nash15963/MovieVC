@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-
 import { movieBrief } from "../Interfaces/MovieInterfaces"; //interface
 import BriefBarComponent from "../Components/BriefBarComponent";
 
