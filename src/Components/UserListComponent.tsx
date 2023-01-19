@@ -36,7 +36,7 @@ const UserListComponent = () => {
                 if(docSnap.exists()){
                     await deleteDoc(doc(db, 'memberData' ,permission,'favorite',id.toString()));
                     console.log('done 1');
-                    let filterResults = list.filter(ele => ele.id !== id)
+                    const filterResults = list.filter(ele => ele.id !== id)
                     console.log(filterResults);
                     setList([...filterResults])
                 }

@@ -1,4 +1,4 @@
-import React, { useCallback, useState  } from "react";
+import { useCallback, useState  } from "react";
 import { useTransition, animated ,config } from '@react-spring/web'
 import { useNavigate } from "react-router-dom";
 import { randomMovie } from '../Interfaces/MovieInterfaces';

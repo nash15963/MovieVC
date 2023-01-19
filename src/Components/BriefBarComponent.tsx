@@ -11,9 +11,11 @@ const BriefComponent = ({ movieCategory, useHookData }: movieElementProps) => {
   // 接收陣列
   const [count, setCount] = useState(0);
   const navigate = useNavigate();
+  
   const handleMoreMovie = (MoreMovie: string) => {
     navigate(`/MoreMovie/${MoreMovie}`);
   };
+  
   const handleEachMovie = (id: number | undefined): void => {
     navigate(`/watchs/${id}`);
   };
