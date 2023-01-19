@@ -20,7 +20,7 @@ const BriefComponent = ({ movieCategory, useHookData }: movieElementProps) => {
 
   const handleRightScrollEvent = () => {
     if (count === 15) setCount(0);
-    else setCount(count + 5);
+    else setCount((prev) => prev + 5);
   };
 
   const handleLeftScrollEvent = () => {
