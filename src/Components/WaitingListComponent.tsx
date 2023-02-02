@@ -3,10 +3,12 @@ import { db } from '../assets/firebase.config' ;
 import { doc,getDoc,setDoc ,deleteDoc} from "firebase/firestore";
 import { movieDetail } from '../Interfaces/MovieInterfaces' ;
 
+interface MovieDetailInterface {
+    videoData : movieDetail
+    movieId : string
+}
 
-
-
-const WaitingListComponent = ({ videoData ,movieId }:{videoData:movieDetail ,movieId:string}) => {
+const WaitingListComponent = ({ videoData ,movieId }:MovieDetailInterface) => {
 
     const [color, setColor] = useState('#918f8f')
     const [like, setLike] = useState(false)

@@ -31,7 +31,6 @@ const Watch = () => {
         .then((res) => res.json())
         .then((myJson) => {
           setVideoData({
-            // TODO:add other detail ?
             id: myJson.id,
             title: myJson.title ? myJson.title : myJson.original_title,
             originalTitle: myJson.original_title,

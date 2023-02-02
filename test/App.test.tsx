@@ -1,4 +1,8 @@
+import { render } from "@testing-library/react";
+import App from "../src/App";
+
 test("that jest is working", () => {
+    render(<App />);
     expect(true).toBe(true);
 });
 
